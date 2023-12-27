@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cosyPOs</title>
+  <link rel="stylesheet" href="output.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+ <!-- start: Sidebar -->
+ <div class="fixed left-0 top-0 w-64 h-full bg-primary p-4 z-50 sidebar-menu font-inter transition-transform">
+  <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
+      <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded object-cover">
+      <span class="text-lg font-bold font-inter text-white ml-3">CosyPOS</span>
+  </a>
+  <ul class="mt-4">
+      <li class="mb-1 group active">
+          <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-secondary group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+              <span class="text-sm">Reservation</span>
+          </a>
+      </li>
+      <li class="mb-1 group">
+          <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+              <span class="text-sm">Table services</span>
+          </a>
+          <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+              <li class="mb-4">
+                  <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Active order</a>
+              </li> 
+              <li class="mb-4">
+                  <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Completed order</a>
+              </li> 
+              <li class="mb-4">
+                  <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Canceled order</a>
+              </li> 
+          </ul>
+      </li>
+      <li class="mb-1 group">
+          <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-secondary group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+              <span class="text-sm">Menu</span>
+          </a>
+          <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+              <li class="mb-4">
+                  <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Manage services</a>
+              </li>
+              
+          </ul>
+      </li>
+      <li class="mb-1 group">
+          <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+              <span class="text-sm">Delivery</span>
+          </a>
+      </li>
+      <li class="mb-1 group">
+        <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+            <span class="text-sm">Accounting</span>
+        </a>
+    </li>
+  </ul>
+  
+</div>
+<div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
+<!-- end: Sidebar -->
+
+
+    <!-- start: Main -->
+    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen font-inter transition-all main">
+      <div class="py-2 px-6 bg-primary flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+          <button type="button" class="text-xl text-text sidebar-toggle">
+              <i class="ri-menu-line"></i>
+          </button>
+          <form action="" class="p-4  border-b-gray-100">
+            <div class="relative w-full">
+                <input type="text" class="py-2 pr-4 pl-10 bg-secondary w-full text-text  border-gray-100 rounded-md text-sm focus:border-text" placeholder="Search...">
+                <i class="ri-search-line absolute top-1/2 left-4 -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </form>
+          <ul class="ml-auto flex gap-[15rem] items-center">
+              <li class="text-text leading-3">Table 5
+                <br><span class="font-thin text-sm font-inter">Leslie K</span>
+              </li>
+              <li class="mr-1 dropdown">
+                  <button type="button" class="dropdown-toggle text-gray-400 w-8 h-8 border-text border-[1px] rounded-full flex items-center justify-center hover:bg-gray-50 hover:text-gray-600">
+                    <i class="ri-edit-line"></i>
+                  </button>
+               </div>
+          </div>
+      </div>
+      <div class="grid grid-cols-2 pb-32 gap-[24rem] bg-primary h-full">
+        <div class="p-4 h-full w-[44rem]">
+          <div class="grid grid-cols-4 gap-[0.4rem]">
+            <div class="bg-breakfast rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class="ri-cup-fill"></i>
+                </button>
+                <span>
+                <h4>Breakfast</h4>
+                <p class="font-inter font-normal text-[0.60rem]">13 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-soup rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-bowl-hot'></i>
+                </button>
+                <span>
+                <h4>Soup</h4>
+                <p class="font-inter font-normal text-[0.60rem]">8 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-pasta rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-bowl-rice' ></i>
+                </button>
+                <span>
+                <h4>Pasta</h4>
+                <p class="font-inter font-normal text-[0.60rem]">10 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-sushi rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-sushi'></i>
+                </button>
+                <span>
+                <h4>Sushi</h4>
+                <p class="font-inter font-normal text-[0.60rem]">15 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-main rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-bell-ring'></i>
+                </button>
+                <span>
+                <h4>Main Course</h4>
+                <p class="font-inter font-normal text-[0.60rem]">7 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-gray-300 rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-cake'></i>
+                </button>
+                <span>
+                <h4>Desserts</h4>
+                <p class="font-inter font-normal text-[0.60rem]">9 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-gray-300 rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class="ri-cup-fill"></i>
+                </button>
+                <span>
+                <h4>Drinks</h4>
+                <p class="font-inter font-normal text-[0.60rem]">11 items</p>
+              </span>
+              </div>
+            </div>
+            <div class="bg-gray-300 rounded-md ">
+              <div class="flex flex-col justify-center items-start gap-4 pb-1 pl-3 pt-2">
+                <button class="text-lg">
+                  <i class='bx bxs-drink'></i>
+                </button>
+                <span>
+                <h4>Alcohol</h4>
+                <p class="font-inter font-normal text-[0.60rem]">8 items</p>
+              </span>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-8">
+          <div class="mt-8">
+            <div class="grid grid-cols-4 gap-[0.4rem]">
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div class="bg-main rounded-md ">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] ">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-secondary"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-secondary"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div dir="ltr" class="bg-secondary text-text rounded-md border-s-4 border-main font-inter">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] text-gray-300">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-text"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-text"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+              <div class="bg-main rounded-md ">
+                <div class="flex flex-col justify-center items-start gap-2 pb-2 pl-3 pt-2">
+                  <p class="flex items-center text-[0.60rem] gap-1 font-light font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+                  <span>
+                    <h4 class="text-xs">Food and Chips</h4>
+                    <p class="font-inter font-normal text-[0.60rem] ">$7.50</p>
+                  </span>
+                  <span class="flex justify-end items-end gap-2 ml-14">
+                    <button class="border-[1px] rounded-md px-[3px] border-secondary"><i class="ri-add-line"></i></button>
+                    <p>0</p>
+                    <button class="border-[1px]  rounded-md px-[3px] border-secondary"><i class="ri-subtract-line"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 flex justify-center items-center gap-11 border-t-[0.5px] border-sushi">
+            <div class="flex gap-1 justify-center pt-2 pl-3 items-center">
+              <button class="bg-sushi rounded-sm px-[2px] text-secondary ">
+                T4
+              </button>
+              <span class="">
+                <p class="text-text text-xs">Leslie K</p>
+                <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+              </span>
+            </div>
+            <div dir="ltr" class="flex gap-1 justify-center border-s-[0.5px] pl-4 pt-2 items-center">
+              <button class="bg-sushi rounded-sm px-[2px] text-secondary ">
+                T4
+              </button>
+              <span class="">
+                <p class="text-text text-xs">Leslie K</p>
+                <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+              </span>
+              <button class="bg-progress rounded-lg w-[3.4rem]  h-3 text-[0.56rem] font-inter ">in progress</button>
+            </div>
+            <div dir="ltr" class="flex gap-1 justify-center border-s-[0.5px] pl-4 pt-2 items-center">
+              <button class="bg-sushi rounded-sm px-[2px] text-secondary ">
+                T4
+              </button>
+              <span class="">
+                <p class="text-text text-xs">Leslie K</p>
+                <p class="flex items-center text-[0.60rem] gap-1 font-light text-gray-300 font-inter">orders <i class="ri-arrow-right-line"></i> kitchen</p>
+              </span>
+              <button class="bg-progress rounded-lg w-[3.4rem]  h-3 text-[0.56rem] font-inter ">in progress</button>
+            </div>
+          </div>
+          </div>
+        <div class="mt-3 font-inter h-full bg-primary w-[20rem]">
+         <div class="flex flex-col justify-center items-center gap-2">
+          <div class="bg-secondary flex justify-between  w-full rounded-md px-2  py-4">
+            <span class="flex gap-2 w-full">
+            <span class="h-4 w-4 flex justify-center items-center rounded-xl bg-text text-black text-xs">1</span>
+            <p class="text-text text-[0.65rem] font-inter font-extralight">Roast chicken  <span class="text-gray-300">x2</span></p>
+            </span>
+            <p class="text-text text-xs">$20.50</p>
+          </div>
+          <div class="bg-secondary flex justify-between  w-full rounded-md px-2  py-4">
+            <span class="flex gap-2 w-full">
+            <span class="h-4 w-4 flex justify-center items-center rounded-xl bg-text text-black text-xs">1</span>
+            <p class="text-text text-[0.65rem] font-inter font-extralight">Red Caviar  <span class="text-gray-300">x3</span></p>
+            </span>
+            <p class="text-text text-xs">$30.50</p>
+          </div>
+          <div class="bg-secondary flex justify-between  w-full rounded-md px-2  py-4">
+            <span class="flex gap-2 w-full">
+            <span class="h-4 w-4 flex justify-center items-center rounded-xl bg-text text-black text-xs">1</span>
+            <p class="text-text text-[0.65rem] font-inter font-extralight">German Sausage  <span class="text-gray-300">x3</span></p>
+            </span>
+            <p class="text-text text-xs">$20.50</p>
+          </div>
+          <div class="bg-secondary flex justify-between  w-full rounded-md px-2  py-4">
+            <span class="flex gap-2 w-full">
+            <span class="h-4 w-4 flex justify-center items-center rounded-xl bg-text text-black text-xs">1</span>
+            <p class="text-text text-[0.65rem] font-inter font-extralight">Irish coffee cream  <span class="text-gray-300">x1</span></p>
+            </span>
+            <p class="text-text text-xs">$4.00</p>
+          </div>
+         </div>
+         <div class="bg-secondary mt-4 w-full px-2 rounded-sm ">
+          <div class="flex justify-between border-dashed border-b-[0.5px]  border-text pb-2">
+            <ul class="text-gray-300 text-xs flex flex-col gap-1">
+              <li>Subtotal</li>
+              <li>Tax 10%</li>
+            </ul>
+            <ul class="text-text text-[0.78rem] flex flex-col gap-1">
+              <li>$171.50</li>
+              <li>$17.5</li>
+            </ul>
+          </div>
+          <ul class=" justify-between text-text flex pt-2">
+            <li>Total</li>
+            <li>$118</li>
+          </ul>
+          <div class="font-inter pt-20 pb-4">
+            <p class="text-xs ml-5 text-gray-300">Payment Method</p>
+            <div class=" flex justify-around items-center pt-3">
+              <div class="flex flex-col justify-center items-center gap-1">
+                <button class="text-text text-lg border-text border-[0.4px] px-5 py-1 rounded-md"><i class='bx bxs-dollar-circle'></i></button>
+                <p  class="text-text text-xs">cash</p>
+              </div>
+              <div class="flex flex-col justify-center items-center gap-1">
+                <button class="text-text text-lg border-text border-[0.4px] px-5 py-1 rounded-md"><i class='bx bx-credit-card'></i></button>
+                <p class="text-text text-xs">Debit Card</p>
+              </div>
+              <div class="flex flex-col justify-center items-center gap-1">
+                <button class="bg-text text-lg border-text border-[0.4px] px-5 py-1 rounded-md"><i class='bx bx-qr'></i></button>
+                <p class="text-text text-xs">E-Wallet</p>
+              </div>
+            </div>
+            <div class="flex justify-center items-center pt-2">
+              <button class="py-1 px-9 bg-text rounded-xl text-sm">Place Order</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
